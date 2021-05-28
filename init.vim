@@ -1,0 +1,25 @@
+"Command to install vim-pluge 
+"curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+call plug#begin('~/.local/share/nvim/plugged')
+
+Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } 
+
+
+call plug#end()
+
+"NeoVim Configuration`
+set nocompatible	" disables compatibility to old-time vi
+set showmatch		" shows matching brackets
+set encoding=utf-8 	" The encoding displayed 
+set nowrap		" Display long lines as just one line
+set hidden 		" Required to keep multiple buffers open multiple buffers 
+set ignorecase		" case insensitive matching 
+set hlsearch 		" highlights search results
+set number		" add line numbers
+syntax on 		" syntax highlighting
+
+let mapleader="\<space>"
+nnoremap <leader>v :vsplit<cr>
+nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <leader>f :FZF<cr>
